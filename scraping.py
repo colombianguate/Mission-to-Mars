@@ -7,7 +7,8 @@ import datetime as dt
 
 def scrape_all():
     # Initiate headless driver for deployment
-    browser = Browser("chrome", executable_path="chromedriver", headless=True)
+    #executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser("chrome", executable_path="C:\webdrivers\chromedriver.EXE", headless=True)
 
     news_title, news_paragraph = mars_news(browser)
 
@@ -27,8 +28,8 @@ def scrape_all():
 
 
 # Set the executable path and initialize the chrome browser in splinter
-executable_path = {'executable_path': ChromeDriverManager().install()}
-browser = Browser('chrome', **executable_path, headless=False)
+#executable_path = {'executable_path': ChromeDriverManager().install()}
+#browser = Browser('chrome', **executable_path, headless=False)
 
 
 
