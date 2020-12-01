@@ -6,8 +6,6 @@ import pandas as pd
 import datetime as dt
 
 def scrape_all():
-    # Initiate headless driver for deployment
-    #executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser("chrome", executable_path="C:\webdrivers\chromedriver.EXE", headless=True)
 
     news_title, news_paragraph = mars_news(browser)
