@@ -48,6 +48,53 @@
           </div>
         </div>
       </div>
+      <!-- Add section for Mars Hemispheres -->
+      <div class="row" id="mars-hemispheres">
+        <div class="col-md-12">
+          <div class="media">
+            <div class="media-body">
+              <h2 style="text-align: center;"> Mars Hemispheres</h2>
+              <table cellpadding="15" cellspacing="15">
+                <tr>
+                {%for each in mars.img_titles[0:2] %}  
+                  <td style="padding-right: 10px">
+                  <img
+                  src= "{{ each['img_url'] }}"
+                  class="img-responsive"
+                  alt="Responsive image">
+                  </td>
+                {% endfor %}
+                </tr>
+                <tr>
+                  {%for each in mars.img_titles[0:2] %}  
+                    <td>
+                      <h3 style="text-align: center;">{{each['title']}}</h3>
+                    </td>
+                  {% endfor %}
+                  </tr>    
+                <tr>
+                  {%for each in mars.img_titles[2:] %}  
+                    <td style="padding-right: 10px">
+                    <img
+                    src= "{{ each['img_url'] }}"
+                    class="img-responsive"
+                    alt="Responsive image">
+                    </td>
+
+                  {% endfor %}
+                <tr>
+                  {%for each in mars.img_titles[2:] %}  
+                    <td>
+                      <h3 style="text-align: center;">{{each['title']}}</h3>
+                    </td>
+                  {% endfor %}
+                  </tr>    
+              </table>
+
+            </div>
+          </div> 
+        </div>
+      </div>
     </div>
   </body>
 </html>
