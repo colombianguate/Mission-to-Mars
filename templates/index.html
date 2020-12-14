@@ -52,52 +52,25 @@
         </div>
       </div>
       <!-- Add section for Mars Hemisphere, also editing images for Deliverable 3 -->
-      <div class="row" id="mars-hemispheres">
-        <div class="col-md-12">
-          <div class="media">
-            <div class="media-body">
-              <h2 style="text-align: center;"> Mars Hemispheres</h2>
-              <table cellpadding="15" cellspacing="15">
-                <tr>
-                {%for each in mars.img_titles[0:2] %}  
-                  <td style="padding-right: 10px">
-                  <img
-                  src= "{{ each['img_url'] }}"
-                  class="img-thumbnail"
-                  alt="Responsive image">
-                  </td>
-                {% endfor %}
-                </tr>
-                <tr>
-                  {%for each in mars.img_titles[0:2] %}  
-                    <td>
-                      <h3 style="text-align: center;">{{each['title']}}</h3>
-                    </td>
-                  {% endfor %}
-                  </tr>    
-                <tr>
-                  {%for each in mars.img_titles[2:] %}  
-                    <td style="padding-right: 10px">
-                    <img
-                    src= "{{ each['img_url'] }}"
-                    class="img-thumbnail"
-                    alt="Responsive image">
-                    </td>
-
-                  {% endfor %}
-                <tr>
-                  {%for each in mars.img_titles[2:] %}  
-                    <td>
-                      <h3 style="text-align: center;">{{each['title']}}</h3>
-                    </td>
-                  {% endfor %}
-                  </tr>    
-              </table>
-
+      <h4 style="padding-top: 50px; margin-top: 100px; text-align: center;">Mars Hemispheres</h4>
+        <div class="card-deck">
+            <hr>
+            <div class="col-md-12">
+                <div class="row" id="mars-hemispheres">
+                    {% for hemisphere in mars.img_titles %}
+                    <div class="col-md-6">
+                        <div class="card text-white bg-danger" style="margin: 30px;">
+                            <!-- If Images are False/None/Non-Existent, Then Default to Error Message -->
+                            <img class="card-img-top" src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="..."/>
+                            <div class="card-body">
+                                <p class="card-text">{{hemisphere.title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-          </div> 
         </div>
-      </div>
     </div>
   </body>
 </html>
